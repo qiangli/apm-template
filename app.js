@@ -6,7 +6,7 @@ app.use(bodyParser());
 app.use(express.static('.'));
 
 app.get('/', function (request, response) {
-    response.sendfile('index.html');
+    response.sendfile('app/index.html');
 });
 
 app.listen(8000, function () {
