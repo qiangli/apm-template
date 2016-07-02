@@ -1,10 +1,8 @@
 /**
 */
-var moduleName = 'template.directives';
+import angular from 'angular';
 
-import { default as ConfigurableTemplateListDirective } from './directives/configurable_template_list_directive';
+import ConfigurableTemplateListDirective from './directives/configurable_template_list_directive';
 
-angular.module(moduleName, [ConfigurableTemplateListDirective])
+export default angular.module('template.directives', [ConfigurableTemplateListDirective.name])
     ;
-
-export default moduleName;

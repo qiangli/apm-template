@@ -9,9 +9,31 @@
   },
   "devDependencies": {
     "body-parser": "^1.10.1",
+    "del": "^2.2.1",
     "express": "^4.10.6",
     "gulp": "^3.8.10",
+    "gulp-angular-templatecache": "^2.0.0",
     "gulp-express": "^0.1.4",
+    "jspm": "^0.16.39",
+    "run-sequence": "^1.2.2",
+    "systemjs": "^0.19.31",
     "underscore": "^1.7.0"
+  },
+  "dependencies": {
+    "angular": "^1.5.7",
+    "babel": "^6.5.2",
+    "babel-core": "^6.10.4",
+    "babel-standalone": "^6.10.3"
+  },
+  "jspm": {
+    "dependencies": {
+      "angular": "github:angular/bower-angular@^1.5.7",
+      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.12"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
   }
 }

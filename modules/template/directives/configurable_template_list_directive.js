@@ -1,18 +1,18 @@
 //
-import configurableTemplateListController from '../controllers/configurable_template_list_controller';
+import angular from 'angular';
 
-var moduleName='template.list';
+import configurableTemplateListController from '../controllers/configurable_template_list_controller';
 
 class ConfigurableTemplateListDirective {
 
-  constructor() {
+  constructor($templateCache) {
     this.restrict='E';
-    this.templateUrl = './modules/template/views/configurable_template_list.html';
+    this.templateUrl = './modules/template/views/configurable_template_list.html';// $templateCache.get('template/views/configurable_template_list.html');
     this.controller = configurableTemplateListController;
   }
 
   link(scope, elem, attrs){
-        console.log("from directive");
+        console.log("from list directive");
   }
 
   static directiveFactory(){
@@ -21,9 +21,7 @@ class ConfigurableTemplateListDirective {
   }
 }
 
-ConfigurableTemplateListDirective.directiveFactory.$inject = [];
+ConfigurableTemplateListDirective.directiveFactory.$inject = ['$templateCache'];
 
-angular.module(moduleName, [])
+export default angular.module('template.list', [])
     .directive('configurableTemplateList', ConfigurableTemplateListDirective.directiveFactory);
-
-export default moduleName;

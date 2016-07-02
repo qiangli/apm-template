@@ -17,4 +17,7 @@ libpeerconnection.log
 # Bower components
 bower_components
 
+dist
+jspm_packages
+
 *.iml
