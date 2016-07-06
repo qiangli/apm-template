@@ -2,7 +2,7 @@
 import angular from 'angular';
 
 // Application Modules
-import configurableTemplate from './modules/template/module';
+import configurableTemplate from './dist/template/module';
 
 let AppModule = angular.module('app', [
     configurableTemplate.name

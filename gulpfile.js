@@ -10,7 +10,7 @@ gulp.task('dist', function () {
 
 gulp.task('dist:views', function() {
     return gulp.src('modules/**/*.html')
-        .pipe(templateCache('template/views.js', {module: 'views', moduleSystem: 'ES6'}))
+        .pipe(templateCache('template/views.js', {module: 'template.views', standalone: true, moduleSystem: 'ES6'}))
         .pipe(gulp.dest('dist'));
 });
 

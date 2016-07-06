@@ -7,7 +7,8 @@ class ConfigurableTemplateListDirective {
 
   constructor($templateCache) {
     this.restrict='E';
-    this.templateUrl = './modules/template/views/configurable_template_list.html';// $templateCache.get('template/views/configurable_template_list.html');
+    //this.templateUrl = './modules/template/views/configurable_template_list.html';//
+    this.template = $templateCache.get('template/views/configurable_template_list.html');
     this.controller = configurableTemplateListController;
   }
 
@@ -15,8 +16,8 @@ class ConfigurableTemplateListDirective {
         console.log("from list directive");
   }
 
-  static directiveFactory(){
-    ConfigurableTemplateListDirective.instance =new ConfigurableTemplateListDirective();
+  static directiveFactory($templateCache) {
+    ConfigurableTemplateListDirective.instance = new ConfigurableTemplateListDirective($templateCache);
     return ConfigurableTemplateListDirective.instance;
   }
 }
@@ -24,4 +25,4 @@ class ConfigurableTemplateListDirective {
 ConfigurableTemplateListDirective.directiveFactory.$inject = ['$templateCache'];
 
 export default angular.module('template.list', [])
-    .directive('configurableTemplateList', ConfigurableTemplateListDirective.directiveFactory);
+    .directive('configurableTemplateList',  ConfigurableTemplateListDirective.directiveFactory);
